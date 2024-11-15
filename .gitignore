@@ -1,0 +1,67 @@
+# ignore vscode stuff
+.vs/
+
+# Ignore .NET build and publish outputs
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node modules for Tailwind and other npm packages
+node_modules/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files
+dist/
+out/
+./src/Client/wwwroot/css
+
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Visual Studio Code
+.vscode/
+
+# Rider/JetBrains
+.idea/
+*.iml
+
+# Compiled source
+*.dll
+*.exe
+*.pdb
+*.cache
+*.app
+*.log
+*.sql
+*.sqlite
+
+# Other
+*.swp
+*.lock.json
+package-lock.json*
+
+# Coverage and testing
+coverage/
+*.testresults/
+TestResult.xml
+TestResult/
+
+# run your own migrations!
+./src/EcomServer/Migrations

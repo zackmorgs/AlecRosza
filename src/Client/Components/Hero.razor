@@ -1,0 +1,7 @@
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
+<header class="hero">
+    @ChildContent
+</header>

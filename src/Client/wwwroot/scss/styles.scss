@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    @apply bg-black;
+    color: #f1f1f1;
+}
+
+#main {
+    top:0;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin-top: -72px;
+}
+
+#nav_menu {
+    background: rgba(0, 0, 0, 0.5);
+    position:sticky;
+    backdrop-filter: blur(0.25rem);
+
+}
+
+#nav_items {
+    background:rgba(0,0,0,0.5);
+}
+
+#logo {
+    @apply inline-flex;
+    @apply items-center;
+    @apply justify-center;
+    text-align:center;
+    color:#ffffff;
+}
+
+#the_a {
+    color:red;
+}
+#the_r {
+    color:blue;
+}
+
+.nav-item {
+    font-size:1.5rem;
+}
+
+.app {
+
+}
+
+.hero {
+    @apply container;
+    @apply px-4;
+    @apply px-2;
+    @apply mx-auto;
+    @apply relative;
+    @apply block;
+    z-index:0;
+    min-height:29rem;
+    overflow:hidden;
+}
+.hero-text  {
+    z-index:2;
+    padding-bottom:4rem;
+    text-shadow:0px 0px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, rgb(0 0 0), rgba(0, 0, 0, 0.0));
+}
+
+.hero-img {
+    z-index:1;
+    margin:0 auto;
+    width:auto;
+}
+
+.rule {
+    max-width: 11rem;
+    @apply mx-auto;
+    @apply my-2;
+
+    &.rule-lg {
+        width:14rem;
+    }
+}
+.btn {
+    @apply py-3;
+    @apply px-4;
+    @apply inline-flex;
+    @apply items-center;
+    @apply justify-center;
+
+    border:1px solid #f1f1f1;
+    color:#ffffff;
+    background: rgba(0, 0, 0, 0.25);
+    line-height:1em;
+    &.btn-social {
+        @apply flex;
+    }
+}
+
+.btn-icon {
+    max-height:1em;
+    width:auto;
+}
+
+#social_list {
+    @apply grid;
+    @apply grid-cols-2;
+    @apply gap-2;
+    @apply mx-auto;
+    max-width:60ch;
+}
+
+@media (min-width: 414px) {
+    
+}
+
+
+@media (min-width: 768px) {
+    .hero {
+        min-height:89ch;
+    }
+    .hero-img {
+        width:100%;
+        height:auto;
+    } 
+}
+
+
+@media (min-width: 1024px) { 
+    .hero-img {
+        height:100%;
+        width:auto;
+    } 
+}
+
+@media (min-width: 1280px) { 
+
+}
+
+@media (min-width: 1536px) {
+
+}
