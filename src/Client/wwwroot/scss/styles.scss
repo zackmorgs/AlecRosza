@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./../../../../node_modules/plumber-sass/";
+
 :root {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
+}
+::selection {
+    color: #ffffff;
+    background-color: #000000;
 }
 
 body {
@@ -23,16 +30,21 @@ body {
 }
 
 #nav_menu {
-    background: rgba(0, 0, 0, 0.5);
     position:sticky;
+    background:rgba(0,0,0,0.5);
     backdrop-filter: blur(0.25rem);
-
 }
 
 #nav_items {
-    background:rgba(0,0,0,0.5);
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
-
+#nav_list {
+    background:rgba(0,0,0,0.5);
+    backdrop-filter: blur(0.25rem);
+}
 #logo {
     @apply inline-flex;
     @apply items-center;
@@ -50,6 +62,10 @@ body {
 
 .nav-item {
     font-size:1.5rem;
+    transition: text-shadow ease 0.3s;
+    &:hover {
+        text-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+    }
 }
 
 .app {
@@ -81,7 +97,7 @@ body {
 }
 
 .rule {
-    max-width: 11rem;
+    max-width: 9rem;
     @apply mx-auto;
     @apply my-2;
 
@@ -102,6 +118,15 @@ body {
     line-height:1em;
     &.btn-social {
         @apply flex;
+    }
+
+    &::selection {
+        background:transparent;
+        color:initial;
+    }
+
+    &:hover {
+        transform:scale(1.05);
     }
 }
 
@@ -124,6 +149,10 @@ body {
 
 
 @media (min-width: 768px) {
+    #nav_list {
+        background:transparent;
+        backdrop-filter:none;
+    }
     .hero {
         min-height:89ch;
     }
@@ -131,18 +160,47 @@ body {
         width:100%;
         height:auto;
     } 
+    .nav-item {
+        @apply px-2;
+    }
+    .btn.cta {
+        @apply px-5;
+        @apply py-3;
+        @apply text-2xl;
+    }
+    .hero-text  {
+        h1 {
+            font-size: 4rem;
+        }
+        h3 {
+            font-size:2.25rem;
+        }
+    }
 }
 
 
 @media (min-width: 1024px) { 
-    .hero-img {
-        height:100%;
-        width:auto;
-    } 
+
 }
 
 @media (min-width: 1280px) { 
-
+    .hero-img {
+        height: auto;
+        width: 50%;
+        z-index: 1;
+        top: -25%;
+        box-shadow: 0px 0px 3rem rgba(0, 0, 0, 1.0);
+    } 
+    .hero-text {
+        margin-top:10rem;
+    }
+    .hero-img-desktop {
+        width:100%;
+        height:auto;
+        z-index:0;
+        filter:blur(2rem);
+        box-shadow:inset  0px 0px 3rem rgba(0, 0, 0, 1.0);
+    }
 }
 
 @media (min-width: 1536px) {

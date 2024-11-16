@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "build:scss": "npx tailwindcss -i ./src/Client/wwwroot/scss/styles.scss -o ./src/Client/wwwroot/css/styles.css",
-    "watch:scss" : "npx tailwindcss -i ./src/Client/wwwroot/scss/styles.scss -o ./src/Client/wwwroot/css/styles.css --watch"
+    "watch:scss": "npx tailwindcss -i ./src/Client/wwwroot/scss/styles.scss -o ./src/Client/wwwroot/css/styles.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "plumber-sass": "^0.7.7",
     "sass": "^1.81.0",
     "tailwindcss": "^3.4.15"
   }
