@@ -776,10 +776,11 @@ p {
   margin:0 auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  a {
-    border-bottom: 1px solid currentColor;
-    color: #a1a1a1;
-  }
+}
+
+.p-default a {
+  border-bottom: 1px solid currentColor;
+  color: #a1a1a1;
 }
 
 #nav_menu {
@@ -821,12 +822,10 @@ p {
 .nav-item {
   font-size:1.5rem;
   transition: text-shadow ease 0.3s;
-  &:hover {
-    text-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
-  }
 }
 
-.app {
+.nav-item:hover {
+  text-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
 }
 
 .hero {
@@ -912,20 +911,25 @@ p {
   color:#ffffff;
   background: rgba(0, 0, 0, 0.25);
   line-height:1em;
-  &.btn-social {
-    display: flex;
-  }
-  &::-moz-selection {
-    background:transparent;
-    color:initial;
-  }
-  &::selection {
-    background:transparent;
-    color:initial;
-  }
-  &:hover {
-    transform:scale(1.5);
-  }
+  transition:transform ease 0.3s;
+}
+
+.btn.btn-social {
+  display: flex;
+}
+
+.btn::-moz-selection {
+  background:transparent;
+  color:initial;
+}
+
+.btn::selection {
+  background:transparent;
+  color:initial;
+}
+
+.btn:hover {
+  transform:scale(1.05);
 }
 
 .btn-icon {
@@ -975,13 +979,12 @@ p {
     line-height: 2rem;
   }
 
-  .hero-text  {
-    h1 {
-      font-size: 4rem;
-    }
-    h3 {
-      font-size:2.25rem;
-    }
+  .hero-text h3 {
+    font-size:2.25rem;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
   }
 
   .p-default {

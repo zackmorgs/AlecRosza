@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 
 :root {
     font-family: "EB Garamond", serif;
@@ -36,11 +37,10 @@ p {
     max-width:45ch;
     margin:0 auto;
     @apply px-2;
-
-    a {
-        border-bottom: 1px solid currentColor;
-        color: #a1a1a1;
-    }
+}
+.p-default a {
+    border-bottom: 1px solid currentColor;
+    color: #a1a1a1;
 }
 
 #nav_menu {
@@ -77,15 +77,11 @@ p {
 .nav-item {
     font-size:1.5rem;
     transition: text-shadow ease 0.3s;
-    &:hover {
-        text-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
-    }
+    
 }
-
-.app {
-
+.nav-item:hover {
+    text-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
 }
-
 .hero {
     @apply container;
     @apply px-4;
@@ -131,20 +127,23 @@ p {
     color:#ffffff;
     background: rgba(0, 0, 0, 0.25);
     line-height:1em;
-    &.btn-social {
-        @apply flex;
-    }
 
-    &::selection {
-        background:transparent;
-        color:initial;
-    }
+    transition:transform ease 0.3s;
 
-    &:hover {
-        transform:scale(1.5);
-    }
+
+
+}
+.btn.btn-social {
+    @apply flex;
 }
 
+.btn::selection {
+    background:transparent;
+    color:initial;
+}
+.btn:hover {
+    transform:scale(1.05);
+}
 .btn-icon {
     max-height:1em;
     width:auto;
@@ -183,13 +182,12 @@ p {
         @apply py-3;
         @apply text-2xl;
     }
-    .hero-text  {
-        h1 {
-            font-size: 4rem;
-        }
-        h3 {
-            font-size:2.25rem;
-        }
+    .hero-text h3 {
+        font-size:2.25rem;
+    }
+
+    .hero-text h1 {
+        font-size: 4rem;
     }
     .p-default {
         font-size:1.5rem;
