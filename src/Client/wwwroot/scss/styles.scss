@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./../../../../node_modules/plumber-sass/";
-
 :root {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-
 }
+
 ::selection {
     color: #ffffff;
     background-color: #000000;
@@ -27,6 +25,22 @@ body {
     bottom:0;
     left: 0;
     margin-top: -72px;
+}
+
+p {
+    line-height: 1.5rem;
+    @apply py-2;
+}
+
+.p-default {
+    max-width:45ch;
+    margin:0 auto;
+    @apply px-2;
+
+    a {
+        border-bottom: 1px solid currentColor;
+        color: #a1a1a1;
+    }
 }
 
 #nav_menu {
@@ -94,6 +108,7 @@ body {
     z-index:1;
     margin:0 auto;
     width:auto;
+    transition: position ease 0.3, width ease 0.3;
 }
 
 .rule {
@@ -126,7 +141,7 @@ body {
     }
 
     &:hover {
-        transform:scale(1.05);
+        transform:scale(1.5);
     }
 }
 
@@ -176,11 +191,30 @@ body {
             font-size:2.25rem;
         }
     }
+    .p-default {
+        font-size:1.5rem;
+        line-height:1.125em;
+    }
+    #social_list {
+        @apply gap-4;
+    }
 }
 
 
 @media (min-width: 1024px) { 
+    .hero-img {
+        width:75%;
+        height:auto;
+        box-shadow: 0px 0px 3rem rgba(0, 0, 0, 1.0);
 
+    } 
+    .hero-img-desktop {
+        width:100%;
+        height:auto;
+        z-index:0;
+        filter:blur(2rem);
+        box-shadow:inset  0px 0px 3rem rgba(0, 0, 0, 1.0);
+    }
 }
 
 @media (min-width: 1280px) { 
@@ -189,18 +223,11 @@ body {
         width: 50%;
         z-index: 1;
         top: -25%;
-        box-shadow: 0px 0px 3rem rgba(0, 0, 0, 1.0);
     } 
     .hero-text {
         margin-top:10rem;
     }
-    .hero-img-desktop {
-        width:100%;
-        height:auto;
-        z-index:0;
-        filter:blur(2rem);
-        box-shadow:inset  0px 0px 3rem rgba(0, 0, 0, 1.0);
-    }
+
 }
 
 @media (min-width: 1536px) {
