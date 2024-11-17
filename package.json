@@ -3,16 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/Client/wwwroot/css/src.css -o ./src/Client/wwwroot/css/dist.css",
-    "watch": "npx tailwindcss -i ./src/Client/wwwroot/css/src.css -o ./src/Client/wwwroot/css/dist.css --watch",
-    "deploy": "firebase deploy"
+    "publish" : "npm-run-all -s css:build css:minify dotnet:publish firebase:deploy",
+    "watch" : "npm-run-all -p watch:css dotnet:watch",
+    "css:build": "npx tailwindcss -i ./src/Client/wwwroot/css/src.css -o ./src/Client/wwwroot/css/dist.css",
+    "css:watch": "npx tailwindcss -i ./src/Client/wwwroot/css/src.css -o ./src/Client/wwwroot/css/dist.css --watch",
+    "css:minify" : "lightningcss --minify --bundle --targets \">= 0.25%\" ./src/Client/wwwroot/css/dist.css -o ./src/Client/wwwroot/css/dist.css --sourcemap",
+    "dotnet:publish" : "dotnet publish ./src/Client -c Release -p:PublishTrimmed=true",
+    "dotnet:watch" : "dotnet watch ./src/Client",
+    "firebase:deploy" : "firebase deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "npm-run-all": "^4.1.5",
     "plumber-sass": "^0.7.7",
     "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.28.1"
   }
 }

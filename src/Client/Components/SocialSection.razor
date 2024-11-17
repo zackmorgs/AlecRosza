@@ -1,0 +1,46 @@
+@code {
+    public bool isLoaded { get; set; } = false;
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(1000); // Simulate loading delay
+            isLoaded = true;
+            StateHasChanged(); // Trigger a re-render to apply the new state
+        }
+    }
+}
+
+<section id="social_section" class="@(!isLoaded ? " loading" : "")">
+    <div class="container mx-auto">
+        <div class="p-4">
+            <h2 class="text-2xl text-center">
+                Social Media
+            </h2>
+            <hr class="rule"  /> 
+            <ul id="social_list" class="mt-4">
+                <li>
+                    <a class="btn btn-social" target="_blank" href="https://soundcloud.com/alecrozsa">
+                        <img class="btn-icon" src="/svg/soundcloud.svg"  loading="lazy"  /> 
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-social" target="_blank" href="https://www.youtube.com/AlecRozsa">
+                        <img class="btn-icon" src="/svg/youtube.svg" loading="lazy"  /> 
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-social" target="_blank" href="https://www.discogs.com/artist/4670288-Alec-Rozsa/image/SW1hZ2U6OTQ4OTQ5NTk=">
+                        <img class="btn-icon" src="/svg/discogs.svg" loading="lazy"  />
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-social" target="_blank" href="https://www.instagram.com/alecrozsa/">
+                        <img class="btn-icon" src="/svg/instagram.svg" loading="lazy"  />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,18 +1,77 @@
-@using Client.Components
+@* @using Client.Components *@
 
 @page "/music"
 
+
 <PageTitle>Alec Rozsa | Music</PageTitle>
+
+<link href="/css/pages/music.css" rel="stylesheet" />
 
 <section>
     <header class="hero lg:flex lg:flex-row">
-        <img class="hero-img-desktop absolute top-0 right-0 bottom-0 left-0 hidden lg:block" src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
-        <img class="hero-img absolute top-0 right-0 bottom-0 left-0" src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
+        <img class="hero-img-desktop absolute top-0 right-0 bottom-0 left-0 hidden lg:block"
+            src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
+        <img class="hero-img absolute top-0 right-0 bottom-0 left-0"
+            src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
         <div class="hero-text absolute right-0 bottom-0 left-0 text-center">
             <h1 class="text-6xl mt-6 text-white">Alec Rozsa</h1>
             <hr class="rule" />
-            <h3 class="text-3xl uppercase mb-6">Composer</h3>
-            <a href="/my-fiverr" class="btn cta">Hire Me!</a>
+            <h3 class="text-3xl uppercase mb-6">Music</h3>
         </div>
     </header>
+</section>
+<section>
+
+</section>
+<section id="orchestral_samples">
+    <div class="container mx-auto">
+        <div class="p-4">
+            <h4 class="text-xl mb-2 text-center">Orchestral Samples</h4>
+            <hr class="rule" />
+            <br />
+            <div class="block w-full md:w-1/2 mx-auto">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/27439953&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+            @* <div class="block w-full md:1/2 mx-auto">
+                <iframe class="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/e4mhUu2BT4s?si=egBP-mLsa0dUq3fM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div> *@
+        </div>
+    </div>
+</section>
+<section id="metal_samples">
+    <div class="container mx-auto">
+        <div class="p-4">
+            <h4 class="text-xl ">Metal Samples</h4>
+            <hr class="rule" />
+            <i class="mb-4">(Hover to reveal player controls.)</i>
+            <br />
+            <div class="block w-full md:w-1/2 mx-auto mt-4">
+                <iframe style="border: 0; height: 470px; width:100%;"
+                    src="https://bandcamp.com/EmbeddedPlayer/album=428965327/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                    seamless><a href="https://amiensus.bandcamp.com/album/reclamation-part-1">Reclamation: Part 1 by
+                        Amiensus</a></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="hear_more">
+    <div class="container mx-auto">
+        <div class="p-4">
+            <h4 class="text-xl mb-2 text-center">Hear More!</h4>
+            <hr class="rule" />
+            <p>Solo work can be heard here:</p>
+            <a href="https://soundcloud.com/alecrozsa" class="btn mx-auto">
+                <img class="btn-icon" src="/svg/soundcloud.svg" loading="lazy" />
+            </a>
+            <br/>
+            <h5 class="text-lg mt-4">
+                Bands
+            </h5>
+            <hr class="rule" />
+            <a href="https://amiensus.bandcamp.com/" class="mx-auto">
+                <img class="w-1/2 md:w-1/3 mx-auto" style="max-width:200px;" src="/img/amiensus-logo.jpg" loading="lazy" />
+            </a>
+        </div>
+    </div>
 </section>

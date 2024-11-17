@@ -1,0 +1,20 @@
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    public bool isLoaded { get; set; } = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(1000); // Simulate loading delay
+            isLoaded = true;
+            StateHasChanged(); // Trigger a re-render to apply the new state
+        }
+    }
+}
+
+<header class="hero@(!isLoaded ? " loading" : "")">
+    @ChildContent
+</header>

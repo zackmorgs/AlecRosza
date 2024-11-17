@@ -1,0 +1,13 @@
+#orchestral_samples,
+#metal_samples,
+#hear_more {
+    text-align:center;
+}
+#hear_more .btn {
+    display:inline-flex;
+}
+
+#hear_more .btn .btn-icon {
+    height:1rem;
+    width:auto;
+}

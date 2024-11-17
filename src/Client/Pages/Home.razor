@@ -1,10 +1,11 @@
-﻿
+﻿@using Client.Components
+
 @page "/"
 
 <PageTitle>Alec Rozsa | Home</PageTitle>
 
 <section>
-    <header class="hero lg:flex lg:flex-row">
+    <Hero >
         <img class="hero-img-desktop absolute top-0 right-0 bottom-0 left-0 hidden lg:block" src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
         <img class="hero-img absolute top-0 right-0 bottom-0 left-0" src="/img/alec-playing-7-string-topaz-upscale-1920w.jpg" alt="Alec Rozsa playing a 7-string guitar" />
         <div class="hero-text absolute right-0 bottom-0 left-0 text-center">
@@ -13,38 +14,6 @@
             <h3 class="text-3xl uppercase mb-6">Composer</h3>
             <a href="/my-fiverr" class="btn cta">Hire Me!</a>
         </div>
-    </header>
+    </Hero>
 </section>
-
-<section>
-    <div class="container mx-auto">
-        <div class="p-4">
-            <h2 class="text-2xl text-center">
-                Social Media
-            </h2>
-            <hr class="rule"  /> 
-            <ul id="social_list" class="mt-4">
-                <li>
-                    <a class="btn btn-social" target="_blank" href="https://soundcloud.com/alecrozsa">
-                        <img class="btn-icon" src="/svg/soundcloud.svg"  loading="lazy"  /> 
-                    </a>
-                </li>
-                <li>
-                    <a class="btn btn-social" target="_blank" href="https://www.youtube.com/AlecRozsa">
-                        <img class="btn-icon" src="/svg/youtube.svg" loading="lazy"  /> 
-                    </a>
-                </li>
-                <li>
-                    <a class="btn btn-social" target="_blank" href="https://www.discogs.com/artist/4670288-Alec-Rozsa/image/SW1hZ2U6OTQ4OTQ5NTk=">
-                        <img class="btn-icon" src="/svg/discogs.svg" loading="lazy"  />
-                    </a>
-                </li>
-                <li>
-                    <a class="btn btn-social" target="_blank" href="https://www.instagram.com/alecrozsa/">
-                        <img class="btn-icon" src="/svg/instagram.svg" loading="lazy"  />
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+<SocialSection/>   

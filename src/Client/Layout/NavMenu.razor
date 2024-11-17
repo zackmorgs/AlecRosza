@@ -1,18 +1,28 @@
-﻿@code {
-    private bool isMenuOpen = false;
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components
 
+@code {
+    private bool isMenuOpen = false;
+    
+    public bool isLoaded { get; set; } = false;
 
     private void ToggleMenu()
     {
         isMenuOpen = !isMenuOpen;
     }
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
+            await Task.Delay(1000);
+            isLoaded = true;
+            StateHasChanged(); 
+        }
     }
 }
 
-<nav id="nav_menu" class="fixed top-0 right-0 left-0 z-10">
+<nav id="nav_menu" class="fixed top-0  right-0 left-0 z-10 @(!isLoaded ? "loading" : "")">
     <div class="container relative md:flex md:flex-row md:items-center md:justify-between mx-auto">
         <div id="nav_bar" class="flex items-center justify-between p-4">
             <a href="/">
@@ -43,10 +53,10 @@
         <!-- Conditionally render "hidden" class on the #nav_items container -->
         <div id="nav_items" class="@($"md:flex {(isMenuOpen ? "" : "hidden")} absolute md:static")">
             <ul id="nav_list" class="flex flex-col md:flex-row md:flex p-4 space-y-2 md:space-y-0 md:space-x-4 md:bg-transparent">
-                <li><a href="/services" class="nav-item">Services</a></li>
-                <li><a href="/bio" class="nav-item">Biography</a></li>
-                <li><a href="/music" class="nav-item">Music</a></li>
-                <li><a href="/contact" class="nav-item">Contact</a></li>
+                <li><NavLink activeClass="active" @onclick="@ToggleMenu" href="/services" class="nav-item">Services</NavLink></li>
+                <li><NavLink activeClass="active" @onclick="@ToggleMenu" href="/bio" class="nav-item">Biography</NavLink></li>
+                <li><NavLink activeClass="active" @onclick="@ToggleMenu" href="/music" class="nav-item">Music</NavLink></li>
+                <li><NavLink activeClass="active" @onclick="@ToggleMenu" href="/contact" class="nav-item">Contact</NavLink></li>
             </ul>
         </div>
     </div>
